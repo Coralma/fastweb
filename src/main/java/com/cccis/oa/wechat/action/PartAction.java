@@ -26,13 +26,9 @@ public class PartAction {
     @RequestMapping(value = "/apply", method = RequestMethod.GET)
     public @ResponseBody
     String apply(@RequestParam final Integer number) {
-        int extNum = partModels.size();
-        if(number < extNum) {
-            extNum = number;
-        }
         long s = System.currentTimeMillis();
         long t = System.currentTimeMillis() - s;
-        return "Decrypt total " + extNum + ", take time " + t + "(ms)";
+        return "Decrypt total TEST, take time " + t + "(ms)";
     }
 
 }
