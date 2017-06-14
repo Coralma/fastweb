@@ -6,4 +6,7 @@ angular.module('apply.controller', [])
             console.log(JSON.stringify(data));
             $scope.result.message = data;
         });
+
+        $scope.applyForm = {accountName:"Coral", startDate: _.now(), endDate:_.now(), applyNumber: 2, leaveType: 1};
+
     }]);

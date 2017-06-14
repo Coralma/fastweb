@@ -35,7 +35,7 @@
     position: relative;
     line-height: 50px;
     display: flex;
-    &:after {
+    &:before {
         .setTopLine(@weuiDialogLineColor);
     }
 }
@@ -67,6 +67,7 @@
         background-color: transparent;
         border: 0;
         outline: 0;
+        line-height: inherit;
         font-size: inherit;
     }
     &:active {

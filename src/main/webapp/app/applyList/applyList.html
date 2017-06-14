@@ -1,0 +1,28 @@
+<div class="page list-page" infinite-scroll="myPagingFunction()" infinite-scroll-disabled="loadType">
+    <div class="weui-search-bar" id="searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <i class="weui-icon-search"></i>
+                <input type="search" class="weui-search-bar__input" id="searchInput" ng-model="searchInputModel" placeholder="搜索" ng-change="accountFilter(searchInputModel)"/>
+                <a href="javascript:" class="weui-icon-clear" id="searchClear" ng-click="searchInputModel='';accountFilter('')"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText">
+                <i class="weui-icon-search"></i>
+                <span>搜索</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel" ng-click="searchInputModel='';accountFilter('')">取消</a>
+    </div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" ng-repeat="a in accounts track by a.accountName"
+           ng-click="editAccount(a)">
+            <div class="weui-cell__bd">
+                <p>{{a.accountName}}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+            <!--<div class="weui-cell__ft">
+                剩余可用年假{{a.availableDateNumber}}天
+            </div>-->
+        </a>
+    </div>
+</div>

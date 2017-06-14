@@ -9,6 +9,39 @@
     <packaging>war</packaging>
     <version>1.0.0</version>
 
+    <repositories>
+        <repository>
+            <id>internal-repository</id>
+            <url>http://192.168.200.2:8080/archiva/repository/internal/</url>
+        </repository>
+        <repository>
+            <id>snapshots-repository</id>
+            <url>http://192.168.200.2:8080/archiva/repository/snapshots/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>internal-repository</id>
+            <url>http://192.168.200.2:8080/archiva/repository/internal/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>snapshots-repository</id>
+            <url>http://192.168.200.2:8080/archiva/repository/snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>archiva.internal</id>
+            <name>internal repository</name>
+            <url>http://192.168.200.2:8080/archiva/repository/internal/</url>
+        </repository>
+        <snapshotRepository>
+            <id>archiva.snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>http://192.168.200.2:8080/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.2.4.RELEASE</spring.version>
@@ -16,11 +49,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cccis.base</groupId>
-            <artifactId>base-encrypt</artifactId>
-            <version>1.0.2.RELEASE</version>
-        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -107,6 +135,11 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cccis</groupId>
+            <artifactId>base-mongo</artifactId>
+            <version>1.0.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
